@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR /'media'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / "app/static/mysheet.css", 'app/static/font-awesome.min.css','app/static/font-awesome.min.css',"adminapp/static/app.c5efd202367c9a4bf407ba021a540493.css"
 ]
 
 
