@@ -1,0 +1,69 @@
+{% block side %} {% load static %}
+<aside class="main-sidebar">
+  <div
+    class="slimScrollDiv"
+    style="position: relative; overflow: hidden; width: 230px; height: 95vh"
+  >
+    <div style="overflow: hidden; width: 230px; height: 95vh">
+      <section class="sidebar" style="height: auto">
+        <div class="user-panel">
+          <div class="image">
+            <img src={% static 'img/avatar2.png' %} alt="User Image"
+            class="img-circle" height="100px" />
+          </div>
+          <div class="info">
+            <p>Good Job, Matirasa</p>
+            <p><small>You haven,t miss any task this week!</small></p>
+            <div>
+              <a href={% url 'setting' %}><i class="ti-panel"></i><small>Settings</small></a>
+              <a href={% url 'profile' %}><i class="ti-user"></i><small>Profile</small></a>
+              <a href={% url 'logout' %}><i class="ti-power-off"></i><small>Logout</small></a>
+         
+            </div>
+          </div>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="header">PAGES</li>
+          <li class="treeview">
+            <a href={% url 'dashboard' %}
+              ><i class="ti-desktop"></i> <span>Dashboard</span>
+             </a>
+            
+          </li>
+
+      <li class="treeview">
+         <a href="#"><i class="ti-write"></i> <span>POST</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+        <ul class="treeview-menu">
+          <li> <a href={% url 'homepost' %} class=""><i class="ti-pencil-alt2"></i> <span>Post Home</span></a> </li>
+          <li><a href={% url 'visionpost' %} class=""><i class="ti-pencil-alt2"></i> <span>Post Vision</span></a> </li>
+          <li> <a href={% url 'aboutpost' %} class=""><i class="ti-pencil-alt2"></i> <span>Post About</span></a></li>
+          <li><a href={% url 'servicepost' %} class=""><i class="ti-pencil-alt2"></i> <span>PostService</span></a></li>
+        </ul>
+      </li>
+          <li>
+            <a href={% url 'candidate' %} class=""
+              ><i class="ti-user"></i> <span>Candidate</span></a
+            >
+          </li>
+          <li>
+            <a href={% url 'referral' %} class=""
+              ><i class="ti-comment-alt"></i> <span>Referral</span></a
+            >
+          </li>
+          <li>
+            <a href={% url 'busiAdmin' %} class=""
+              ><i class="ti-calendar"></i> <span>Business</span></a
+            >
+          </li>
+          </li>
+          <li>
+            <a href={% url 'reset_password' %} class=""
+              ><i class="ti-key"></i> <span>Change Password</span></a
+            >
+          </li>
+        
+      
+  </div>
+</aside>
+
+{% endblock side %}

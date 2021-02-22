@@ -1,0 +1,46 @@
+{% extends 'basefile.html' %} {% block contentAdmin %}
+{% if user.is_authenticated %}
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+ 
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">TARGET GROUP</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">CITY</th>
+        <th scope="col">ZIPCODE</th>
+        <th scope="col">STATE</th>
+        <th scope="col">MESSAGE</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for detail in object_list %}
+      <tr>
+        <th scope="row"> {{detail.id}}</th>
+        <td><a href={% url 'detailCustomer' detail.id %}>{{detail.name}}</a></td>
+        <td>{{detail.email}}</td>
+        <td>{{detail.target}}</td>
+        <td>{{detail.address}}</td>
+        <td>{{detail.city}}</td>
+        <td>{{detail.zipcode}}</td>
+        <td>{{detail.state}}</td>
+        <td>{{detail.message}}</td>
+        <td><a href={% url 'update' detail.pk %} class="btn btn-primary" >Edit</a></td>
+        <td><a href={% url 'detelecustomer' detail.pk %} class="btn btn-danger" >Delete</a></td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <h1>The page doesnt exist</h1>
+{% endif %}
+</div>
+
+{% endblock contentAdmin %}

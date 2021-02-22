@@ -1,0 +1,768 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content  %}
+ <div class="call_back-button">
+      <form name="contact-form" class="cc-float-form" action={% url 'ref' %} method="post">
+       {% csrf_token %}
+        <p></p>
+        Name:
+        <span style="color: #3ea944">*</span><br />
+        <input
+          class="contact-form-area"
+          name="name"
+          size="30"
+          value=""
+          type="text"
+        />
+        <p></p>
+        Email:
+        <span style="color: #3ea944">*</span><br />
+        <input
+          class="contact-form-area"
+          name="email"
+          size="30"
+          value=""
+          type="text"
+        />
+        <p></p>
+        Message: <span style="color: #3ea944">*</span><br />
+        <textarea
+          class="contact-form-area"
+          name="email-message"
+          cols="25"
+          rows="5"
+        ></textarea>
+        <p></p>
+        <input type="submit" value="submit" class="btn btn-outline-primary">
+      </form>
+    </div>
+ <div id="myModalhome" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Target Group</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <ul>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <img src={% static 'images/icon/home-popup/candidate.png' %} />
+                  <p>Candidate</p>
+                  <a href={% url 'student' %} class="btn btn-outline-success">submit</a>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <img src={% static 'images/icon/home-popup/referral.png' %} />
+                  <p>Referral</p>
+                 <a href={% url 'ref' %} class="btn btn-outline-success">submit</a>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <img src={% static 'images/icon/home-popup/business-partner.png' %} />
+                  <p>Business Partner</p>
+                 <a href={% url 'business' %} class="btn btn-outline-success">submit</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="tech-slideshow">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+            ></li>
+            <li
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+            ></li>
+            <li
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+            ></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+             {% for obj in object_list %}
+             <img src="{{obj.banner_homeImage1.url}}" class="d-block w-100" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>
+                  AIMLAY - we are an Educational & Writing Services Provider!
+                </h5>
+                <p>
+                  We provide out of the way QUALITY SUPPORT which one expects
+                  and requires.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+           
+              <img src="{{obj.banner_homeImage2.url}}" class="d-block w-100" />
+            
+              <div class="carousel-caption d-none d-md-block">
+                <h5>OUR SERVICES</h5>
+                <ul>
+                  <li><a href="#">PhD Admission | </a></li>
+                  <li><a href="#">Honorary Doctorate | </a></li>
+                  <li><a href="#">Thesis Writing | </a></li>
+                  <li><a href="#">Book Writing | </a></li>
+                  <li><a href="#">Biography | </a></li>
+                  <li><a href="#">Educational Academy |</a></li>
+                  <li><a href="#">Engineering Academy |</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{{obj.banner_homeImage3.url}}" class="d-block w-100" />
+              {% endfor %}
+              <div class="carousel-caption d-none d-md-block">
+                <h5>WE CAN HELP YOU</h5>
+                <p>COMPLETE YOUR EDUCATION FROM WHERE YOU LEFT</p>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              <h3 class="main_heading">ABOUT US</h3>
+            </div>
+            <p>
+              Our whole purpose of <span>EDUCATION</span> is to turn our
+              candidates into a successful achiever.
+            </p>
+            <p>
+              We started as an educational counselling for needy students and
+              our professional guidance greatly helped them in achieving
+              academic excellence. Slowly our reputation grew among students and
+              working professionals who had a desire for completing their
+              education from where they had left. We helped them too and managed
+              to get them admission in good universities and colleges! The
+              effect was incredible. And now hundreds of students started
+              approaching us and we thought what we needed was a broader and
+              greater prospective.
+            </p>
+            <a href="#" class="learn_more-button">Learn More</a>
+          </div>
+          <div class="col-md-6">
+            <div class="about_us-slider">
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="4"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="5"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="6"
+                  ></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src={% static 'images/about-slider/1.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/2.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/3.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/4.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/5.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/6.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={% static 'images/about-slider/7.jpg' %}
+                      class="d-block"
+                      alt="about_banner-img"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-services_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <h3 class="main_heading">Our Featured Services</h3>
+            </div>
+            <p>
+              AimLay Private Limited has Six subsidiaries, quite specialized in
+              providing all kinds of support to scholars during the hectic
+              admission and completion process. Because of the great assistance
+              and guidance of our services, scholars’ hard work, patience, and
+              perseverance and hope, everything come on the perfect track and
+              flow in the right direction. Our strategies and help from the
+              experts have been invaluable for our candidates.
+            </p>
+          </div>
+          <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/phd_phd.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">PhD Admission</a></h3>
+                  <p class="post-description">
+                    We provide ‘PhD Admission’ to those candidates who are
+                    either extremely busy in their hectic lifestyles or they are
+                    working professionals who aim to complete higher education,
+                    or they are students who find it very difficult to manage
+                    everything on their own! All possible supports provided!
+                  </p>
+                  <a
+                    href="https://www.phdadmission.in/"
+                    target="_blank"
+                    class="read-more"
+                    >www.phdadmission.in</a
+                  >
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/thesis-logo.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">Thesis Writing</a></h3>
+                  <p class="post-description">
+                    Writing a Thesis and Synopsis for research has never been
+                    easier for scholars especially when they are working,
+                    however, they still engage themselves in this lengthy piece
+                    of academic writing. e, with the help of our Thesis Writing
+                    team assist our scholars in every step carefully and
+                    systemically.
+                  </p>
+                  <a
+                    href="http://www.thesiswriting.in/"
+                    target="_blank"
+                    class="read-more"
+                    >www.thesiswriting.in</a
+                  >
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/educational.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">Educational Academy</a>
+                  </h3>
+                  <p class="post-description">
+                    We take privilege to introduce WorldStar Educational Academy
+                    for Regular & Distance Studies, which constantly strives for
+                    excellence, coupled with all round personality development
+                    for the students as well as Working Professionals.
+                    Discontinue students to familiarize as well as Upgrade their
+                    education.
+                  </p>
+                  <a
+                    href="https://www.worldstaredu.com/"
+                    target="_blank"
+                    class="read-more"
+                    >www.worldstaredu.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/honorary.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">Honorary Doctorate</a></h3>
+                  <p class="post-description">
+                    Our goal here is to award 'Honorary Doctorates' to
+                    individuals, we can be proud of themselves for being a good
+                    man. And individuals who have shown generosity and helped
+                    and uplifted their communities’ living standard, and have
+                    inspired hundreds of others through their passion and
+                    commitment.
+                  </p>
+                  <a
+                    href="http://www.honorarydoctorate.in/"
+                    target="_blank"
+                    class="read-more"
+                    >www.honorarydoctorate.in</a
+                  >
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/book-logo.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">Book Writing</a></h3>
+                  <p class="post-description">
+                    we provide a full range of writing services for people who
+                    want to see their names in print, and PhD scholars, just
+                    like you? There are thousands of people around the world who
+                    have great interest in writing and reading, but since they
+                    are so engaged in their hectic lifestyles and professions.
+                  </p>
+                  <a
+                    href="https://www.bookwriting.in/"
+                    target="_blank"
+                    class="read-more"
+                    >www.bookwriting.in</a
+                  >
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/wsw-engg.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">Engineering Academy</a>
+                  </h3>
+                  <p class="post-description">
+                    Engineering is the application of scientific, economic and
+                    practical knowledge to build as well as maintain machines,
+                    buildings, devices, systems and processes. Therefore,
+                    helping engineering students is challenge and is a broad
+                    work. Our highly specialised team manage to take everything
+                    from where students feel a professional help is required.
+                  </p>
+                  <a
+                    href="https://www.worldstarengineering.com/"
+                    target="_blank"
+                    class="read-more"
+                    >www.worldstarengineering.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src={% static 'images/featured-services-logo/bio_logo.png' %} />
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">Biography</a></h3>
+                  <p class="post-description">
+                    Biography is not all about writing your biography it is all
+                    about preserving your entire life in the modern history of
+                    contemporary era! Every person on earth has a story to tell
+                    which can inspire millions of people throughout the
+                    generations. You must have a desire to live forever even
+                    after your death! We are developing a platform you will be
+                    known all the time.
+                  </p>
+                  <a
+                    href="https://www.biography.dev/"
+                    target="_blank"
+                    class="read-more"
+                    >www.biography.dev</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="register_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <h3 class="main_heading">Inquiry Now</h3>
+            </div>
+            <p>
+              We will love to hear your response on any of our SERVICES and will
+              be happy to talk about it! Kindly fill the form on the left and
+              send us all the relevant information. We will try out to get back
+              to you as soon as you query arrive to us! TILL THEN ALL THE BEST!
+            </p>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#registermodal"
+            >
+              Apply Now
+            </button>
+          </div>
+          <div
+            class="modal fade"
+            id="registermodal"
+            tabindex="-1"
+            aria-labelledby="registermodalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registermodalLabel">
+                    Inquiry Form
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form class="chilwalregister_form">
+                    <div class="mb-3">
+                      <label class="form-label">Enter Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="XYZ"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Enter Contact Number</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Contact Number"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Enter WhatsApp Number</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="WhatsApp Number"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Enter Subject</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Course &amp; Subject, or Services"
+                      />
+                    </div>
+                    <button type="button" class="btn">Send</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="faq-left">
+              <img src={% static 'images/faq.jpg' %} />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="faq-right">
+              <div>
+                <h3 class="main_heading">Solution</h3>
+              </div>
+              <p>This should be provided post asking few questions</p>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Accordion Item #1
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <strong>This is the first item's accordion body.</strong>
+                      It is hidden by default, until the collapse plugin adds
+                      the appropriate classes that we use to style each element.
+                      These classes control the overall appearance, as well as
+                      the showing and hiding via CSS transitions. You can modify
+                      any of this with custom CSS or overriding our default
+                      variables. It's also worth noting that just about any HTML
+                      can go within the <code>.accordion-body</code>, though the
+                      transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Accordion Item #2
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <strong>This is the second item's accordion body.</strong>
+                      It is hidden by default, until the collapse plugin adds
+                      the appropriate classes that we use to style each element.
+                      These classes control the overall appearance, as well as
+                      the showing and hiding via CSS transitions. You can modify
+                      any of this with custom CSS or overriding our default
+                      variables. It's also worth noting that just about any HTML
+                      can go within the <code>.accordion-body</code>, though the
+                      transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Accordion Item #3
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong>
+                      It is hidden by default, until the collapse plugin adds
+                      the appropriate classes that we use to style each element.
+                      These classes control the overall appearance, as well as
+                      the showing and hiding via CSS transitions. You can modify
+                      any of this with custom CSS or overriding our default
+                      variables. It's also worth noting that just about any HTML
+                      can go within the <code>.accordion-body</code>, though the
+                      transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg_img_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <h4>
+                The Whole Purpose Of Education Is To Turn Mirrors Into Windows
+              </h4>
+            </div>
+            <p>
+              We will love to hear your response on any of our SERVICES and will
+              be happy to talk about it! Kindly fill the form on the left and
+              send us all the relevant information. We will try out to get back
+              to you as soon as you query arrive to us! TILL THEN ALL THE BEST!
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="benefits_sec-left">
+              <div>
+                <h3 class="main_heading">Benefits from our services</h3>
+              </div>
+              <ul>
+                <li>Well Researched and professionally written content</li>
+                <li>On time delivery</li>
+                <li>Experienced and dedicated support</li>
+                <li>Multi-slot payment option</li>
+                <li>Plagiarism Free Content</li>
+                <li>
+                  Without impacting your professional life, Research work will
+                  be completed within your limited time frame
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src={% static 'images/benifit.jpg' %} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="counter-sec1">
+      <div class="counter_sec1-inner">
+        <ul class="list-inline">
+          <li class="counter-container">
+            <!--<i class="fab fa-instagram fa-3x"></i>-->
+            <div class="counter" data-target="1546"></div>
+            <span>Phd Admission</span>
+          </li>
+          <li class="counter-container">
+            <div class="counter" data-target="4345"></div>
+            <span>Thesis</span>
+          </li>
+          <li class="counter-container">
+            <div class="counter" data-target="5420"></div>
+            <span>UG PG Admission</span>
+          </li>
+          <li class="counter-container">
+            <div class="counter" data-target="11311"></div>
+            <span>Total Projects</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+{% include 'success.html' %}
+
+
+
+   {% endblock content %}

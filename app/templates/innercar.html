@@ -1,0 +1,53 @@
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    {% for obj in object_list %}
+    <img
+      src="{{obj.banner_carAboutImage1.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage2.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage3.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage4.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage5.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage6.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="{{obj.banner_carAboutImage7.url}}"
+      class="d-block"
+      alt="about_banner-img"
+    />
+  </div>
+  {% endfor %}
+</div>

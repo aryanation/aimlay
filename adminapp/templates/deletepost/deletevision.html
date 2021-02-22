@@ -1,0 +1,17 @@
+{% extends 'basefile.html' %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+  <h1 class="mt-5 pt-5">Hello candidate</h1>
+
+  <form method="POST">
+  {% csrf_token %}
+  <strong
+    >Are you sure you want to delete:
+    <span class="alert-danger">{{object.id}}</span>?</strong
+  >
+  <button class="btn btn-danger">Delete</button>
+</div>
+
+
+{% endblock contentAdmin %}

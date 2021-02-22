@@ -1,0 +1,32 @@
+{% extends 'basefile.html' %} {% load static %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+
+  {% for object in object_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">serial</th>
+        <th scope="col">Service banner image</th>
+        <th scope="col">Service success story image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{object.id}}</th>
+        <td>{{object.Name}}</td>
+        <td>{{object.Email}}</td>
+        <td>{{object.Mobile}}</td>
+        <td>{{object.Target}}</td>
+        <td>{{object.Address}}</td>
+         <td><a href={% url 'updatebusiness' object.pk %} class="btn btn-primary" >Edit</a></td>
+        <td><a href={% url 'updatebusiness' object.pk %} class="btn btn-danger" >Delete</a></td> 
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+
+{% endblock contentAdmin %}

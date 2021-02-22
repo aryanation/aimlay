@@ -1,0 +1,26 @@
+{% load static %}
+<header class="main-header">
+   <a href="#/dashboard" class="logo"
+      ><span class="logo-mini"
+      ><b><img src={% static 'img/logo1.png' %} alt="User Image" /></b
+      ></span>
+   <span class="logo-lg"
+      ><img src={% static 'img/logo1.png' %} alt="User Image" /><b class="text-primary">Aimlay</b></span
+      ></a
+      >
+   <nav class="navbar navbar-static-top">
+      <a href="#" data-toggle="offcanvas" role="button" class="sidebar-toggle"
+         ><span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span> <span class="icon-bar"></span>
+      <span class="icon-bar"></span
+         ></a>
+     
+      <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+          <li> <a href={% url 'homeview' %} class=""><i class="ti-home"></i> <span>Home</span> </li>
+          <li> <a href={% url 'aboutview' %} class=""><i class="ti-pencil-alt2"></i> <span>About</span></li>
+          <li> <a href={% url 'visionview' %} class=""><i class="ti-pencil-alt2"></i> <span>Vision</span></li>
+          <li><a href={% url 'serviceview' %} class=""><i class="ti-pencil-alt2"></i> <span>Service</span></li>
+      </ul>
+   </nav>
+</header>

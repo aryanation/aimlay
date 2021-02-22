@@ -1,0 +1,303 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <div class="tech-slideshow">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src={% static 'images/slider/referral.jpg' %} class="d-block w-100" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>AIMLAY - we are an Educational & Writing Services Provider!</h5>
+                            <p>We provide out of the way QUALITY SUPPORT which one expects and requires.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src={% static 'images/slider/business-partner.jpg' %} class="d-block w-100" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>OUR SERVICES</h5>
+                            <ul>
+                                <li><a href="#">PhD Admission | </a></li>
+                                <li><a href="#">Honorary Doctorate | </a></li>
+                                <li><a href="#">Thesis Writing | </a></li>
+                                <li><a href="#">Book Writing | </a></li>
+                                <li><a href="#">Biography | </a></li>
+                                <li><a href="#">Educational Academy |</a></li>
+                                <li><a href="#">Engineering Academy |</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src={% static 'images/slider/banner1.jpg' %} class="d-block w-100" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>WE CAN HELP YOU</h5>
+                            <p>COMPLETE YOUR EDUCATION FROM WHERE YOU LEFT</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 pt-5">
+     <div class="row">
+      <div class="col-md-6">
+       <h2 style="border-left: 30px solid orange">Get In Touch</h2>
+      </div>
+
+
+          <div class="col-md-6">
+           <div class="p-5">
+              <div class="card" style=" border: 1px solid rgba(0, 0, 0, 0.125);">
+                 <div class="card-body">
+                   <form action="" method="post">
+                    {% csrf_token %}
+                      {{form.as_p}}
+                       <input type="submit" value="Submit" class="btn btn-outline-primary">
+                     </form>
+                  </div>
+               </div>
+             </div>   
+          </div>    
+      </div>
+    </div>
+
+    <div class="featured-services_sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <h3 class="main_heading">Our Featured Services</h3>
+                    </div>
+                    <p>AimLay Private Limited has Six subsidiaries, quite specialized in providing all kinds of support to scholars during the hectic admission and completion process. Because of the great assistance and guidance of our services, scholars’ hard work, patience, and perseverance and hope, everything come on the perfect track and flow in the right direction. Our strategies and help from the experts have been invaluable for our candidates.</p>
+                </div>
+                <div class="col-md-12">
+                    <div id="news-slider" class="owl-carousel">
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/phd_phd.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">PhD Admission</a></h3>
+                                <p class="post-description">We provide ‘PhD Admission’ to those candidates who are either extremely busy in their hectic lifestyles or they are working professionals who aim to complete higher education, or they are students who find it very difficult to manage everything on their own! All possible supports provided!</p>
+                                <a href="https://www.phdadmission.in/" target="_blank" class="read-more">www.phdadmission.in</a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/thesis-logo.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Thesis Writing</a></h3>
+                                <p class="post-description">Writing a Thesis and Synopsis for research has never been easier for scholars especially when they are working, however, they still engage themselves in this lengthy piece of academic writing. e, with the help of our Thesis Writing team assist our scholars in every step carefully and systemically.</p>
+                                <a href="http://www.thesiswriting.in/" target="_blank" class="read-more">www.thesiswriting.in</a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/educational.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Educational Academy</a></h3>
+                                <p class="post-description">We take privilege to introduce WorldStar Educational Academy for Regular & Distance Studies, which constantly strives for excellence, coupled with all round personality development for the students as well as Working Professionals. Discontinue students to familiarize as well as Upgrade their education.</p>
+                                <a href="https://www.worldstaredu.com/" target="_blank" class="read-more">www.worldstaredu.com</a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/honorary.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Honorary Doctorate</a></h3>
+                                <p class="post-description">Our goal here is to award 'Honorary Doctorates' to individuals, we can be proud of themselves for being a good man. And individuals who have shown generosity and helped and uplifted their communities’ living standard, and have inspired hundreds of others through their passion and commitment.</p>
+                                <a href="http://www.honorarydoctorate.in/" target="_blank" class="read-more">www.honorarydoctorate.in</a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/book-logo.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Book Writing</a></h3>
+                                <p class="post-description">we provide a full range of writing services for people who want to see their names in print, and PhD scholars, just like you? There are thousands of people around the world who have great interest in writing and reading, but since they are so engaged in their hectic lifestyles and professions.</p>
+                                <a href="https://www.bookwriting.in/" target="_blank" class="read-more">www.bookwriting.in</a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/wsw-engg.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Engineering Academy</a></h3>
+                                <p class="post-description">Engineering is the application of scientific, economic and practical knowledge to build as well as maintain machines, buildings, devices, systems and processes. Therefore, helping engineering students is challenge and is a broad work. Our highly specialised team manage to take everything from where students feel a professional help is required.</p>
+                                <a href="https://www.worldstarengineering.com/" target="_blank" class="read-more">www.worldstarengineering.com </a>
+                            </div>
+                        </div>
+
+                        <div class="post-slide">
+                            <div class="post-img">
+                                <img src={% static 'images/featured-services-logo/bio_logo.png' %} />
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title"><a href="#">Biography</a></h3>
+                                <p class="post-description">Biography is not all about writing your biography it is all about preserving your entire life in the modern history of contemporary era! Every person on earth has a story to tell which can inspire millions of people throughout the generations. You must have a desire to live forever even after your death! We are developing a platform you will be known all the time.</p>
+                                <a href="https://www.biography.dev/" target="_blank" class="read-more">www.biography.dev</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="referral-solution-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="referral-solution-right">
+                        <div>
+                            <h3 class="main_heading">Solution</h3>
+                        </div>
+                        <p>how our system will work </p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="referral-solution-left">
+                        <img src={% static 'images/referral/solution.jpg' %} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg_img_sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <h4>The Whole Purpose Of Education Is To Turn Mirrors Into Windows</h4>
+                    </div>
+                    <p>
+                        We will love to hear your response on any of our SERVICES and will be happy to talk about it!
+                        Kindly fill the form on the left and send us all the relevant information. We will try out to get back to you as soon as you query arrive to us! TILL THEN ALL THE BEST!
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefits_sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="benefits_sec-left">
+                        <div>
+                            <h3 class="main_heading">Benefits from our services</h3>
+                        </div>
+                        <ul>
+                            <li>Well Researched and professionally written content</li>
+                            <li>On time delivery</li>
+                            <li>Realtime support to grow your business</li>
+                            <li>Upto 50K can be earned monthly while working for your existing</li>
+                            <li>Guidance to earn more from referrals only</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src={% static 'images/benifit.jpg' %} />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-sec1">
+        <div class="counter_sec1-inner">
+            <ul class="list-inline">
+                <li class="counter-container">
+                    <!--<i class="fab fa-instagram fa-3x"></i>-->
+                    <div class="counter" data-target="1546"></div>
+                    <span>Phd Admission</span>
+                </li>
+                <li class="counter-container">
+
+                    <div class="counter" data-target="4345"></div>
+                    <span>Thesis</span>
+                </li>
+                <li class="counter-container">
+
+                    <div class="counter" data-target="5420"></div>
+                    <span>UG PG Admission</span>
+                </li>
+                <li class="counter-container">
+                    <div class="counter" data-target="11311"></div>
+                    <span>Total Projects</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="student_says-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <h3 class="main_heading">What Our Students Says</h3>
+                    </div>
+                    <p>We are more than happy to publish the success stories of our students who have tremendously benfitted from us. All the best to our thousands of clients, or say our STUDENTS.</p>
+                </div>
+                <div class="col-md-8 offset-md-2">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src={% static 'images/review/1.png' %} />
+                            </div>
+                            <div class="testimonial-content">
+                                <p>I’m now a doctorate and it is because of the invaluable help of their thesis writing department. With them my academic writing is great! Thanks so much, AimLay.</p>
+                            </div>
+                            <h3 class="testimonial-title">
+                                <a href="#">Advocate</a>
+                                <small>Dr. (Adv) Srivastav</small>
+                            </h3>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src={% static 'images/review/2.png' %} />
+                            </div>
+                            <div class="testimonial-content">
+                                <p>AimLay education has solved all problems, by providing outstanding services, from admission to completion – their slogan is quite right! Very impressed!</p>
+                            </div>
+                            <h3 class="testimonial-title">
+                                <a href="#">PhD Scholar</a>
+                                <small>Dr. Malik</small>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

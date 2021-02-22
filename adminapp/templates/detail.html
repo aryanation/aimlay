@@ -1,0 +1,18 @@
+{% extends 'basefile.html' %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+  <h1 class="mt-5 pt-5">UserDetail</h1>
+
+  <h2>Name:{{object.name}}</h2>
+
+  <h2>Email:{{object.email}}</h2>
+  <h2>Target Group:{{object.target}}</h2>
+  <h2>Address:{{object.address}}</h2>
+  <h2>City:{{object.city}}</h2>
+  <h2>ZIPCODE:{{object.zipcode}}</h2>
+  <h2>State:{{object.state}}</h2>
+  <h2>Message:{{object.message}}</h2>
+</div>
+
+{% endblock contentAdmin %}

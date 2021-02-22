@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="FaviconIcon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/pace.css' %}"> <link
+    rel="stylesheet" href="{% static 'css/blue.css' %}" /> <link rel="stylesheet"
+    type="text/css" href="{% static 'css/sweetalert.min.css' %}" /> <link
+    rel="stylesheet" type="text/css" href={% static 'css/web_font.css' %} />
+
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+
+    <link
+      href={% static 'css/app.c5efd202367c9a4bf407ba021a540493.css' %}
+      rel="stylesheet"
+    />
+    <link href={% static 'css/style.css' %} rel="stylesheet" />
+
+    <link
+      id="avast_os_ext_custom_font"
+      href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+{% if user.is_authenticated %}
+  <header>{% include 'common/navbar.html' %}</header>
+
+  <div class="col-lg-2">{% block side %}
+  {% include 'common/sidenav.html' %}
+  {% endblock side %}</div>
+
+  <div class="col-lg-10">
+  
+ 
+ {% block contentAdmin %}
+ {% endblock contentAdmin %}
+     
+                    
+ 
+  </div>
+ {% else %}
+
+ <h1 class="text center m-5 p-5 mt-5 mb-5 mx-5">You are not allow here</h1>
+
+ {% endif %}
+
+
+
+
+ <script src={% static 'js/pace.min.js' %}></script>
+    <script type="text/javascript" src={% static 'js/manifest.a93b93a352d18d9d162b.js' %}></script>
+    <script type="text/javascript" src={% static 'js/vendor.d845172dbaf3276eeec4.js' %}></script>
+    <script type="text/javascript" src={% static 'js/app.b3e3d9a853fbe8388926.js' %}></script>
+  
+  </body>
+</html>

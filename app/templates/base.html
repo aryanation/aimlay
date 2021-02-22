@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>An Educational & Writing Services Provider</title>
+    <link rel="shortcut icon" href="{% static 'images/fav.png' %} "type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/mysheet.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+    />
+  </head>
+  <body>
+   
+
+    <div class="main_header-banner">
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="social-icons list-inline">
+                <li>
+                  <a
+                    href="https://www.facebook.com/AimlayPvtLtd/"
+                    target="_blank"
+                    ><i class="fa fa-facebook" aria-hidden="true"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/RKGuptaDelhi" target="_blank"
+                    ><i class="fa fa-twitter" aria-hidden="true"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCcg0EP3XEs9VPrE9dNEFTvA"
+                    target="_blank"
+                    ><i class="fa fa-youtube" aria-hidden="true"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/rkguptadelhi/"
+                    target="_blank"
+                    ><i class="fa fa-linkedin" aria-hidden="true"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com/aimlay_pvt_ltd?igshid=11xuw4p9e0pou"
+                    target="_blank"
+                    ><i class="fa fa fa-instagram" aria-hidden="true"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="contact-details list-inline">
+                <li>
+                  <i class="fa fa-phone" aria-hidden="true"></i>+91 828-7801-801
+                </li>
+                <li>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>+91
+                  799-9999-015
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <img src={% static 'images/logo1.png' %} />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href={% url 'home' %}
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url 'about' %}>About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url 'vision' %}>Our Vision</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url 'service' %}>Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url 'contact' %}>Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url 'join' %}>Join Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+<!--mid content-->
+
+   {% block content %}{% endblock content %}
+
+   <!--End content area-->
+
+
+
+        
+    <div class="footer">
+      <div class="container">
+        <div class="my-footer-top">
+          <div class="row">
+            <div class="col-md-2">
+              <a class="footer-logo" href="#"
+                ><img src={% static 'images/logo1.png' %} alt="logo" class="img-responsive"
+              /></a>
+            </div>
+            <div class="col-md-4">
+              <h3>What We Do</h3>
+              <p>
+                AimLay Private Limited has been known for building students’
+                personality by enhancing academic portfolios.
+                <span
+                  >And other forms of educational need! Students of any
+                  background are warmly welcomed! You are Hopeless when come and
+                  You are Hopeful when you Go!</span
+                >
+              </p>
+            </div>
+            <div class="col-md-4">
+              <h3>Contact Info</h3>
+              <ul>
+                <li>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>125 Baaz
+                  Mall, Pocket 5, Sec 24
+                  <span>ROHINI, New Delhi 10085 | INDIA</span>
+                </li>
+                <li>
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i
+                  ><a href="#">info@aimlay.com</a>
+                </li>
+                <li>
+                  <i class="fa fa-phone" aria-hidden="true"></i>+91 828 7801 801
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h3>Navigation</h3>
+              <ul>
+                <li><a href="#">COURSES</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">Vision</a></li>
+                <li><a href="#">Mail Us</a></li>
+                <li><a href="#">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="my-footer-bottom">
+          <div class="row">
+            <div class="col-md-8">
+              <p>
+                © 2021 AimLay Pvt. Ltd. All Rights Reserved | Designed &
+                Developed By
+                <a href="http://netcoreinfo.com/" target="_blank"
+                  >Netcoreinfo</a
+                >
+              </p>
+            </div>
+            <div class="col-md-4">
+              <ul class="footer_social_icons">
+                <li>
+                  <a href="#" target="_blank" class="facebook"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" class="twitter"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a target="_blank" href="#" class="youtube"
+                    ><i class="fa fa-youtube" aria-hidden="true"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" class="linkedin"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+                <li>
+                  <a target="_blank" href="#" class="google-plus"
+                    ><i class="fa fa-instagram" aria-hidden="true"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a id="buttonscroll-top"></a>
+
+    <div class="fixed_calling-chilwal">
+      <div class="fixedcall">
+        <a class="phonenumber" href="tel:8080808080"
+          ><span
+            ><i class="fa fa-volume-control-phone" aria-hidden="true"></i
+          ></span>
+          <p>Call Now<br />8080808080</p></a
+        >
+      </div>
+      <div class="fixedwhatapp">
+        <a class="phonenumber" href="https://wa.me/9999000011"
+          ><span><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+          <p>WhatsApp<br />9999000011</p></a
+        >
+      </div>
+    </div>
+
+    <div class="call_back-button">
+      <form name="contact-form" class="cc-float-form">
+        <p></p>
+        Name:
+        <span style="color: #3ea944">*</span><br />
+        <input
+          class="contact-form-area"
+          name="name"
+          size="30"
+          value=""
+          type="text"
+        />
+        <p></p>
+        Email:
+        <span style="color: #3ea944">*</span><br />
+        <input
+          class="contact-form-area"
+          name="email"
+          size="30"
+          value=""
+          type="text"
+        />
+        <p></p>
+        Message: <span style="color: #3ea944">*</span><br />
+        <textarea
+          class="contact-form-area"
+          name="email-message"
+          cols="25"
+          rows="5"
+        ></textarea>
+        <p></p>
+        <button type="button">Send</button>
+      </form>
+    </div>
+
+    <div class="floating_chat-button">
+      <div id="chat-circle" class="btn btn-raised">
+        <div id="chat-overlay"></div>
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <p>Online - Chat With Us</p>
+      </div>
+
+      <div class="chat-box">
+        <div class="chat-box-header">
+          ChatBot
+          <span class="chat-box-toggle"
+            ><i class="fa fa-times" aria-hidden="true"></i
+          ></span>
+        </div>
+        <div class="chat-box-body">
+          <div class="chat-box-overlay"></div>
+          <div class="chat-logs"></div>
+        </div>
+        <div class="chat-input">
+          <form>
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Send a message..."
+            />
+            <button type="submit" class="chat-submit" id="chat-submit">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src={% static 'js/bootstrap.min.js' %}></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"
+    ></script>
+
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".header-bottom").addClass("shrink");
+          $(".add").hide();
+        } else {
+          $(".header-bottom").removeClass("shrink");
+          $(".add").show();
+        }
+      });
+    </script>
+
+    <script>
+      $(function () {
+        $(".scroll-down").click(function () {
+          $("html, body").animate(
+            { scrollTop: $(".about_sec").offset().top },
+            "slow"
+          );
+          return false;
+        });
+      });
+    </script>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+
+      counters.forEach((counter) => {
+        counter.innerText = "0";
+        const updateCounter = () => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText;
+          const increment = target / 200;
+          if (count < target) {
+            counter.innerText = `${Math.ceil(count + increment)}`;
+            setTimeout(updateCounter, 1);
+          } else counter.innerText = target;
+        };
+        updateCounter();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#myModalhome").modal("show");
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#testimonial-slider").owlCarousel({
+          items: 1,
+          itemsDesktop: [1000, 1],
+          itemsDesktopSmall: [979, 1],
+          itemsTablet: [768, 1],
+          pagination: false,
+          navigation: true,
+          navigationText: ["", ""],
+          slideSpeed: 1000,
+          autoPlay: true,
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#news-slider").owlCarousel({
+          items: 3,
+          itemsDesktop: [1199, 3],
+          itemsDesktopSmall: [980, 2],
+          itemsMobile: [600, 1],
+          navigation: true,
+          navigationText: ["", ""],
+          pagination: true,
+          autoPlay: true,
+        });
+      });
+    </script>
+
+    <script>
+      var btn = $("#buttonscroll-top");
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+          btn.addClass("show");
+        } else {
+          btn.removeClass("show");
+        }
+      });
+
+      btn.on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "300");
+      });
+    </script>
+
+    <script>
+      $(function () {
+        var INDEX = 0;
+        $("#chat-submit").click(function (e) {
+          e.preventDefault();
+          var msg = $("#chat-input").val();
+          if (msg.trim() == "") {
+            return false;
+          }
+          generate_message(msg, "self");
+          var buttons = [
+            {
+              name: "Existing User",
+              value: "existing",
+            },
+
+            {
+              name: "New User",
+              value: "new",
+            },
+          ];
+
+          setTimeout(function () {
+            generate_message(msg, "user");
+          }, 1000);
+        });
+
+        function generate_message(msg, type) {
+          INDEX++;
+          var str = "";
+          str +=
+            "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + '">';
+          str += '          <span class="msg-avatar">';
+          str +=
+            "            <img src=http://emilcarlsson.se/assets/mikeross.png>";
+          str += "          <\/span>";
+          str += '          <div class="cm-msg-text">';
+          str += msg;
+          str += "          <\/div>";
+          str += "        <\/div>";
+          $(".chat-logs").append(str);
+          $("#cm-msg-" + INDEX)
+            .hide()
+            .fadeIn(300);
+          if (type == "self") {
+            $("#chat-input").val("");
+          }
+          $(".chat-logs")
+            .stop()
+            .animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+        }
+
+        function generate_button_message(msg, buttons) {
+          INDEX++;
+          var btn_obj = buttons
+            .map(function (button) {
+              return (
+                '              <li class="button"><a href="javascript:;" class="btn btn-primary chat-btn" chat-value="' +
+                button.value +
+                '">' +
+                button.name +
+                "<\/a><\/li>"
+              );
+            })
+            .join("");
+          var str = "";
+          str += "<div id='cm-msg-" + INDEX + '\' class="chat-msg user">';
+          str += '          <span class="msg-avatar">';
+          str +=
+            "            <img src=https://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg>";
+          str += "          <\/span>";
+          str += '          <div class="cm-msg-text">';
+          str += msg;
+          str += "          <\/div>";
+          str += '          <div class="cm-msg-button">';
+          str += "            <ul>";
+          str += btn_obj;
+          str += "            <\/ul>";
+          str += "          <\/div>";
+          str += "        <\/div>";
+          $(".chat-logs").append(str);
+          $("#cm-msg-" + INDEX)
+            .hide()
+            .fadeIn(300);
+          $(".chat-logs")
+            .stop()
+            .animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+          $("#chat-input").attr("disabled", true);
+        }
+
+        $(document).delegate(".chat-btn", "click", function () {
+          var value = $(this).attr("chat-value");
+          var name = $(this).html();
+          $("#chat-input").attr("disabled", false);
+          generate_message(name, "self");
+        });
+
+        $("#chat-circle").click(function () {
+          $("#chat-circle").toggle("scale");
+          $(".chat-box").toggle("scale");
+        });
+
+        $(".chat-box-toggle").click(function () {
+          $("#chat-circle").toggle("scale");
+          $(".chat-box").toggle("scale");
+        });
+      });
+    </script>
+  </body>
+</html>

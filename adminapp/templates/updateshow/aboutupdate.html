@@ -1,0 +1,13 @@
+{% extends 'basefile.html' %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+  <h1 class="mt-5 pt-5">Update data</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{form.media}} {{form.as_p}}
+    <button class="btn btn-danger">Update</button>
+  </form>
+</div>
+
+{% endblock contentAdmin %}

@@ -1,0 +1,49 @@
+{% extends 'basefile.html' %} {% load static %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+
+  {% for object in object_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">serial</th>
+        <th scope="col">About banner 1</th>
+        <th scope="col">About banner 2</th>
+        <th scope="col">About banner 3</th>
+        <th scope="col">About slider 1</th>
+        <th scope="col">About slider 2</th>
+        <th scope="col">About slider 3</th>
+        <th scope="col">About slider 4</th>
+        <th scope="col">About slider 5</th>
+        <th scope="col">About slider 6</th>
+        <th scope="col">About slider 7</th>
+        <th scope="col">About Heading</th>
+        <th scope="col">About Body</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{object.id}}</th>
+        <td>{{object.banner_Abtimage1}}</td>
+        <td>{{object.banner_Abtimage2}}</td>
+        <td>{{object.banner_Abtimage3}}</td>
+        <td>{{object.banner_carAboutImage1}}</td>
+        <td>{{object.banner_carAboutImage2}}</td>
+        <td>{{object.banner_carAboutImage3}}</td>
+        <td>{{object.banner_carAboutImage4}}</td>
+        <td>{{object.banner_carAboutImage5}}</td>
+        <td>{{object.banner_carAboutImage6}}</td>
+        <td>{{object.banner_carAboutImage7}}</td>
+        <td>{{object.aboutheading}}</td>
+        <td>{{object.Aboutbody |striptags}}</td>
+        <td><a href={% url 'updateabout' object.pk %} class="btn btn-primary btn-sm" >Edit</a></td>
+        <td><a href={% url 'deleteabout' object.pk %} class="btn btn-danger btn-sm" >Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+
+{% endblock contentAdmin %}

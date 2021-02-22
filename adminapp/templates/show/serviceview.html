@@ -1,0 +1,36 @@
+{% extends 'basefile.html' %} {% load static %} {% block contentAdmin %}
+
+<div class="container-fluid my-4 py-5 mt-4">
+  <br /><br /><br /><br /><br />
+
+  {% for object in object_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">serial</th>
+        <th scope="col">Service banner image 1</th>
+        <th scope="col">Service banner image 2</th>
+        <th scope="col">Service banner image 3</th>
+        <th scope="col">Service content heading</th>
+        <th scope="col">Service content post</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{object.id}}</th>
+        
+        <td>{{object.banner_serv1}}</td>
+        <td>{{object.banner_serv2}}</td>
+        <td>{{object.banner_serv3}}</td>
+        <td>{{object.Service_heading}}</td>
+        <td>{{object.Servicebody|striptags}}</td>
+        <td><a href={% url 'updateservice' object.pk %} class="btn btn-primary sm-btn" >Edit</a></td>
+        <td><a href={% url 'deleteservice' object.pk %} class="btn btn-danger sm-btn" >Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+
+{% endblock contentAdmin %}

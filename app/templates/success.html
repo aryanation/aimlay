@@ -1,0 +1,71 @@
+{% load static %}
+<div class="student_says-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <h3 class="main_heading">What Our Students Says</h3>
+        </div>
+        <p>
+          We are more than happy to publish the success stories of our students
+          who have tremendously benfitted from us. All the best to our thousands
+          of clients, or say our STUDENTS.
+        </p>
+      </div>
+      <div class="col-md-8 offset-md-2">
+        <div id="testimonial-slider" class="owl-carousel">
+          <div class="testimonial">
+            {% for obj in object_list %}
+            <div class="pic">
+              <img src="{{obj.banner_review_image1.url}}" />
+            </div>
+            <div class="testimonial-content">
+              <p>
+                I’m now a doctorate and it is because of the invaluable help of
+                their thesis writing department. With them my academic writing
+                is great! Thanks so much, AimLay.
+              </p>
+            </div>
+            <h3 class="testimonial-title">
+              <a href="#">Advocate</a>
+              <small>Dr. (Adv) Srivastav</small>
+            </h3>
+          </div>
+          <div class="testimonial">
+            <div class="pic">
+              <img src="{{obj.banner_review_image2.url}}" />
+            </div>
+            <div class="testimonial-content">
+              <p>
+                AimLay education has solved all problems, by providing
+                outstanding services, from admission to completion – their
+                slogan is quite right! Very impressed!
+              </p>
+            </div>
+            <h3 class="testimonial-title">
+              <a href="#">PhD Scholar</a>
+              <small>Dr. Malik</small>
+            </h3>
+          </div>
+          <div class="testimonial">
+            <div class="pic">
+              <img src="{{obj.banner_review_image3.url}}" />
+            </div>
+            <div class="testimonial-content">
+              <p>
+                AimLay education has solved all problems, by providing
+                outstanding services, from admission to completion – their
+                slogan is quite right! Very impressed!
+              </p>
+            </div>
+            <h3 class="testimonial-title">
+              <a href="#">PhD Scholar</a>
+              <small>Dr. Malik</small>
+            </h3>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
