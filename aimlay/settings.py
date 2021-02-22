@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -23,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bm!hz!^rv0al4(svd@@(3h14e-7(^z%33qe77r1lyyr#eigs+*'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['aimlay.herokuapp.com','127.0.0.1:8000']
 
 
 # Application definition
@@ -126,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
@@ -135,7 +137,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR /'media'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'static'
+]
+
 
 CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
 
